@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main() {
+  
+  //declaração das variáveis
+  
+    int contador = 0;
+    float valor, desconto, valortotal;
+    char saida;
+
+    //contador responsavél pelos valores
+    
+    while (contador < 1 && saida != 'S') {
+        printf("Digite o valor da compra: ");
+        scanf("%f", &valor);
+
+    // if responsavél pelo cálculo do desconto
+        
+        if (valor > 500) {
+          valortotal = ((valor * 0.2) - valor) * (-1);
+        } else {
+          valortotal = ((valor * 0.15) - valor) * (-1);
+        }
+        
+    // saída dos dados    
+
+        printf("Com o desconto o valor total é de: %.2f\n", valortotal);
+        printf("Digite S para sair do programa: ");
+        scanf(" %c", &saida);
+    }
+
+    return 0;
+}
